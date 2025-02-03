@@ -1,0 +1,26 @@
+$ sudo flashrom --programmer internal
+
+output:
+flashrom 1.5.0-devel (git:v1.4.0-56-g6c26e9ef) on Linux 6.9.3-76060903-generic (x86_64)
+flashrom is free software, get the source code at https://flashrom.org
+
+Cannot open file stream for /dev/mtd0
+coreboot table found at 0x659fb000.
+Found chipset "Intel Meteor Lake-P/M".
+Enabling flash write... Warning: Setting BIOS Control at 0xdc from 0x8b to 0x89 failed.
+New value is 0x8b.
+SPI Configuration is locked down.
+FREG0: Flash Descriptor region (0x00000000-0x00003fff) is read-write.
+FREG1: BIOS region (0x01000000-0x01ffffff) is read-write.
+FREG2: Management Engine region (0x00006000-0x00a69fff) is read-write.
+FREG3: Gigabit Ethernet region (0x00004000-0x00005fff) is read-write.
+FREG9: Device Expansion 2 region (0x00a6a000-0x00ffffff) is read-write.
+PR0: Warning: 0x01050000-0x01ffffff is read-only.
+PR1: Warning: 0x01000000-0x0100ffff is read-only.
+At least some flash regions are write protected. For write operations,
+you should use a flash layout and include only writable regions. See
+manpage for more details.
+OK.
+Found Winbond flash chip "W25Q256JW_DTR" (32768 kB, Programmer-specific) on internal.
+No operations were specified.
+
