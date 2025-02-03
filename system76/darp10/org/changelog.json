@@ -1,0 +1,18 @@
+{
+  "versions": [
+    {
+      "date": "2024-09-11",
+      "bios": "2024-09-11_351d80d",
+      "ec": "2024-09-11_351d80d",
+      "me": "18.0.5.2098",
+      "description": "<ul><li>Updated FSP to D.0.A8.20</li><li>Fixed touchpad in PS/2 mode</li><li>Fixed detection of USB3 hubs in Type-C ports</li><li>Fixed reporting of the second fan</li><li>Fixed using USB3 devices at USB3 speeds in all ports</li><li>Updated fan tables</li><li>Changed fans to use highest reported temperature to calculate duty instead of using the highest calculated duty across all fans</li><li>Changed fan mechanism from calculated interpolation/smoothing to a fixed step to limit rapid changes in duty over short periods</li></ul>"
+    },
+    {
+      "date": "2024-05-07",
+      "bios": "2024-05-07_3de6462",
+      "ec": "2024-05-07_3de6462",
+      "me": "18.0.5.2098",
+      "description": "<ul><li>Added original firmware</li></ul>"
+    }
+  ]
+}
