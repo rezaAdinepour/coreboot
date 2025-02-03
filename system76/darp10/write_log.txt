@@ -1,0 +1,334 @@
+$ sudo flashrom -p internal -w org/firmware.rom -o writelog.txt
+
+
+flashrom 1.5.0-devel (git:v1.4.0-56-g6c26e9ef) on Linux 6.9.3-76060903-generic (x86_64)
+flashrom was built with GCC 11.4.0, little endian
+Command line (6 args): flashrom -p internal -w org/firmware.rom -o writelog.txt
+Initializing internal programmer
+get_mtd_info: device_name: "BIOS", is_writeable: 0, numeraseregions: 0, total_size: 33554432, erasesize: 4096
+Cannot open file stream for /dev/mtd0
+Found candidate at: 00000500-00000528
+Found coreboot table at 0x00000500.
+Found candidate at: 00000000-00000830
+Found coreboot table at 0x00000000.
+coreboot table found at 0x659fb000.
+coreboot header(24) checksum: 28d7 table(2072) checksum: 3d37 entries: 44
+Vendor ID: System76, part ID: darp10-b
+Using Internal DMI decoder.
+DMI string chassis-type: "Laptop"
+Laptop detected via DMI.
+DMI string system-manufacturer: "System76"
+DMI string system-product-name: "Darter Pro"
+DMI string system-version: "darp10-b"
+DMI string baseboard-manufacturer: "System76"
+DMI string baseboard-product-name: "Darter Pro"
+DMI string baseboard-version: "darp10-b"
+W836xx enter config mode worked or we were already in config mode. W836xx leave config mode had no effect.
+Active config mode, unknown reg 0x20 ID: 55.
+Found chipset "Intel Meteor Lake-P/M" with PCI ID 8086:7e23.
+Enabling flash write... Using libpci PCI_ACCESS_I386_TYPE1
+BIOS_SPI_BC = 0x1900008b: BIOS Interface Lock-Down: enabled, Boot BIOS Straps: 0x0 (SPI)
+Top Swap: not enabled
+SPI Read Configuration: prefetching enabled, caching enabled, 
+BIOS_CNTL = 0x8b: BIOS Lock Enable: enabled, BIOS Write Enable: enabled
+Warning: Setting BIOS Control at 0xdc from 0x8b to 0x89 failed.
+New value is 0x8b.
+SPIBAR = 0x00007295dcb24000 (phys = 0xb292d000)
+0x04: 0xf800 (HSFS)
+HSFS: FDONE=0, FCERR=0, AEL=0, BERASE=0, SCIP=0, FDOPSS=1, FDV=1, FLOCKDN=1
+SPI Configuration is locked down.
+Reading OPCODES... done
+        OP        Type      Pre-OP
+op[0]: 0x01, write w/o addr, none
+op[1]: 0x02, write w/  addr, none
+op[2]: 0x03, read  w/  addr, none
+op[3]: 0x05, read  w/o addr, none
+op[4]: 0x20, write w/  addr, none
+op[5]: 0x9f, read  w/o addr, none
+op[6]: 0xd8, write w/  addr, none
+op[7]: 0x0b, read  w/  addr, none
+Pre-OP 0: 0x06, Pre-OP 1: 0x50
+0x06: 0x0010 (HSFC)
+HSFC: FGO=0, FCYCLE=0, FDBC=0, SME=0
+0x08: 0x00000001 (FADDR)
+0x0c: 0x00001f00 (DLOCK)
+DLOCK: BMWAG_LOCKDN=0, BMRAG_LOCKDN=0, SBMWAG_LOCKDN=0, SBMRAG_LOCKDN=0,
+       PR0_LOCKDN=1, PR1_LOCKDN=1, PR2_LOCKDN=1, PR3_LOCKDN=1, PR4_LOCKDN=1,
+       SSEQ_LOCKDN=0
+0x118: 0xffff (BIOS_BM_RAP)
+0x11a: 0xffff (BIOS_BM_WAP)
+0x54: 0x00030000 FREG0: Flash Descriptor region (0x00000000-0x00003fff) is read-write.
+0x58: 0x1fff1000 FREG1: BIOS region (0x01000000-0x01ffffff) is read-write.
+0x5C: 0x0a690006 FREG2: Management Engine region (0x00006000-0x00a69fff) is read-write.
+0x60: 0x00050004 FREG3: Gigabit Ethernet region (0x00004000-0x00005fff) is read-write.
+0x64: 0x00007fff FREG4: Platform Data region is unused.
+0x68: 0x00007fff FREG5: Device Expansion region is unused.
+0x6C: 0x00007fff FREG6: BIOS2 region is unused.
+0x70: 0x00007fff FREG7: unknown region is unused.
+0x74: 0x00007fff FREG8: EC/BMC region is unused.
+0x78: 0x0fff0a6a FREG9: Device Expansion 2 region (0x00a6a000-0x00ffffff) is read-write.
+0x7C: 0x00007fff FREG10: Innovation Engine region is unused.
+0x80: 0x00007fff FREG11: 10GbE0 region is unused.
+0xE0: 0x00007fff FREG12: 10GbE1 region is unused.
+0xE4: 0x00007fff FREG13: unknown region is unused.
+0xE8: 0x00007fff FREG14: unknown region is unused.
+0xEC: 0x00007fff FREG15: PTT region is unused.
+0x84: 0x9fff1050 PR0: Warning: 0x01050000-0x01ffffff is read-only.
+0x88: 0x900f1000 PR1: Warning: 0x01000000-0x0100ffff is read-only.
+0x8C: 0x00000000 (PR2 is unused)
+0x90: 0x00000000 (PR3 is unused)
+0x94: 0x00000000 (PR4 is unused)
+0x98: 0x00000000 (GPR0 is unused)
+At least some flash regions are write protected. For write operations,
+you should use a flash layout and include only writable regions. See
+manpage for more details.
+0xa0: 0x80 (SSFS)
+SSFS: SCIP=0, FDONE=0, FCERR=0, AEL=0
+0xa1: 0xf60000 (SSFC)
+SSFC: SCGO=0, ACS=0, SPOP=0, COP=0, DBC=0, SME=0, SCF=6
+0xa4: 0x5006 (PREOP)
+0xa6: 0xb32d (OPTYPE)
+0xa8: 0x05030201 (OPMENU)
+0xac: 0x0bd89f20 (OPMENU+4)
+0xc4: 0xf1d820a4 (LVSCC)
+LVSCC: BES=0x0, WG=1, WSR=0, WEWS=0, EO=0x20, VCL=1
+0xc8: 0x00002000 (UVSCC)
+UVSCC: BES=0x0, WG=0, WSR=0, WEWS=0, EO=0x20
+Reading flash descriptors mapped by the chipset via FDOC/FDOD... done.
+=== Content Section ===
+FLVALSIG 0x0ff0a55a
+FLMAP0   0x00040003
+FLMAP1   0x82100208
+FLMAP2   0x000301c0
+
+--- Details ---
+NR          (Number of Regions):                    16
+FRBA        (Flash Region Base Address):         0x040
+NC          (Number of Components):                  1
+FCBA        (Flash Component Base Address):      0x030
+ISL         (ICH/PCH/SoC Strap Length):            130
+FISBA/FPSBA (Flash ICH/PCH/SoC Strap Base Addr): 0x100
+NM          (Number of Masters):                     2
+FMBA        (Flash Master Base Address):         0x080
+MSL/PSL     (MCH/PROC Strap Length):                 1
+FMSBA       (Flash MCH/PROC Strap Base Address): 0xc00
+
+=== Component Section ===
+FLCOMP   0x0930f0f6
+FLILL    0xad604221
+FLILL1   0xc7c4b9b7
+
+--- Details ---
+Component 1 density:            32 MB
+Component 2 is not used.
+Read Clock Frequency:           100 MHz
+Read ID and Status Clock Freq.: 50 MHz
+Write and Erase Clock Freq.:    50 MHz
+Fast Read is supported.
+Fast Read Clock Frequency:      50 MHz
+Dual Output Fast Read Support:  disabled
+Invalid instruction 0:          0x21
+Invalid instruction 1:          0x42
+Invalid instruction 2:          0x60
+Invalid instruction 3:          0xad
+Invalid instruction 4:          0xb7
+Invalid instruction 5:          0xb9
+Invalid instruction 6:          0xc4
+Invalid instruction 7:          0xc7
+
+=== Region Section ===
+FLREG0   0x00030000
+FLREG1   0x1fff1000
+FLREG2   0x0a690006
+FLREG3   0x00050004
+FLREG4   0x00007fff
+FLREG5   0x00007fff
+FLREG6   0x00007fff
+FLREG7   0x00007fff
+FLREG8   0x00007fff
+FLREG9   0x0fff0a6a
+FLREG10   0x00007fff
+FLREG11   0x00007fff
+FLREG12   0x00007fff
+FLREG13   0x00007fff
+FLREG14   0x00007fff
+FLREG15   0x00007fff
+
+--- Details ---
+Region 0 (Descr. ) 0x00000000 - 0x00003fff
+Region 1 (BIOS   ) 0x01000000 - 0x01ffffff
+Region 2 (ME     ) 0x00006000 - 0x00a69fff
+Region 3 (GbE    ) 0x00004000 - 0x00005fff
+Region 4 (Platf. ) is unused.
+Region 5 (DevExp ) is unused.
+Region 6 (BIOS2  ) is unused.
+Region 7 (unknown) is unused.
+Region 8 (EC/BMC ) is unused.
+Region 9 (unknown) 0x00a6a000 - 0x00ffffff
+Region 10 (IE     ) is unused.
+Region 11 (10GbE0 ) is unused.
+Region 12 (10GbE1 ) is unused.
+Region 13 (unknown) is unused.
+Region 14 (unknown) is unused.
+Region 15 (PTT    ) is unused.
+
+=== Master Section ===
+FLMSTR1  0xffffffff
+FLMSTR2  0xffffffff
+
+--- Details ---
+       FD    BIOS    ME    GbE    Pltf    DE   BIOS2   Reg7    EC    DE2    IE   10GbE0 10GbE1  RegD   RegE   PTT  
+BIOS   rw     rw     rw     rw     rw     rw     rw     rw     rw     rw     rw     rw     rw     rw     rw     rw  
+ME     rw     rw     rw     rw     rw     rw     rw     rw     rw     rw     rw     rw     rw     rw     rw     rw  
+
+Enabling hardware sequencing by default for Apollo/Gemini/Jasper/Elkhart/Meteor/Panther Lake.
+OK.
+No board enable found matching coreboot IDs vendor="System76", model="darp10-b".
+The following protocols are supported: Programmer-specific.
+Probing for Programmer Opaque flash chip, 0 kB: Hardware sequencing reports 1 attached SPI flash chip with a density of 32768 kB.
+There is only one partition containing the whole address space (0x000000 - 0x1ffffff).
+There are 8192 erase blocks with 4096 B each.
+HSFC: FGO=1, FCYCLE=2, FDBC=2, SME=0
+Chip identified: W25Q256JW_DTR
+Added layout entry 00000000 - 01ffffff named complete flash
+Found Winbond flash chip "W25Q256JW_DTR" (32768 kB, Programmer-specific) on internal.
+Found Winbond flash chip "W25Q256JW_DTR" (32768 kB, Programmer-specific).
+This chip may contain one-time programmable memory. flashrom cannot read
+and may never be able to write it, hence it may not be able to completely
+clone the contents of this chip (see man page for details).
+coreboot last image size (not ROM size) is 33554432 bytes.
+Manufacturer: System76
+Mainboard ID: darp10-b
+This coreboot image matches this mainboard.
+Reading Status register
+HSFC: FGO=1, FCYCLE=0, FDBC=0, SME=0
+ich_hwseq_read_status: only supports STATUS1
+wp_read_register: read from register 2 not is supported by programmer, writeprotect operations will assume it contains 0x00.
+Reading Status register
+HSFC: FGO=1, FCYCLE=0, FDBC=0, SME=0
+ich_hwseq_read_status: only supports STATUS1
+wp_read_register: read from register 2 not is supported by programmer, writeprotect operations will assume it contains 0x00.
+Reading Status register
+HSFC: FGO=1, FCYCLE=0, FDBC=0, SME=0
+Reading Status register
+HSFC: FGO=1, FCYCLE=0, FDBC=0, SME=0
+Reading Status register
+HSFC: FGO=1, FCYCLE=0, FDBC=0, SME=0
+Reading Status register
+HSFC: FGO=1, FCYCLE=0, FDBC=0, SME=0
+Reading Status register
+HSFC: FGO=1, FCYCLE=0, FDBC=0, SME=0
+ich_hwseq_read_status: only supports STATUS1
+wp_read_register: read from register 2 not is supported by programmer, writeprotect operations will assume it contains 0x00.
+Reading Status register
+HSFC: FGO=1, FCYCLE=0, FDBC=0, SME=0
+ich_hwseq_read_status: only supports STATUS1
+wp_read_register: read from register 2 not is supported by programmer, writeprotect operations will assume it contains 0x00.
+Reading Status register
+HSFC: FGO=1, FCYCLE=0, FDBC=0, SME=0
+Reading Status register
+HSFC: FGO=1, FCYCLE=0, FDBC=0, SME=0
+Reading Status register
+HSFC: FGO=1, FCYCLE=0, FDBC=0, SME=0
+Reading Status register
+HSFC: FGO=1, FCYCLE=0, FDBC=0, SME=0
+Reading Status register
+HSFC: FGO=1, FCYCLE=0, FDBC=0, SME=0
+ich_hwseq_read_status: only supports STATUS1
+wp_read_register: read from register 2 not is supported by programmer, writeprotect operations will assume it contains 0x00.
+ich_hwseq_read_status: only supports STATUS1
+wp_read_register: read from register 3 not is supported by programmer, writeprotect operations will assume it contains 0x00.
+Reading Status register
+HSFC: FGO=1, FCYCLE=0, FDBC=0, SME=0
+write_wp_bits: wp_verify reg:1 value:0x0
+ich_hwseq_read_status: only supports STATUS1
+wp_read_register: read from register 2 not is supported by programmer, writeprotect operations will assume it contains 0x00.
+write_wp_bits: wp_verify reg:2 value:0x0
+ich_hwseq_read_status: only supports STATUS1
+wp_read_register: read from register 3 not is supported by programmer, writeprotect operations will assume it contains 0x00.
+write_wp_bits: wp_verify reg:3 value:0x0
+Reading Status register
+HSFC: FGO=1, FCYCLE=0, FDBC=0, SME=0
+ich_hwseq_read_status: only supports STATUS1
+wp_read_register: read from register 2 not is supported by programmer, writeprotect operations will assume it contains 0x00.
+ich_hwseq_read_status: only supports STATUS1
+wp_read_register: read from register 3 not is supported by programmer, writeprotect operations will assume it contains 0x00.
+Reading Status register
+HSFC: FGO=1, FCYCLE=0, FDBC=0, SME=0
+write_wp_bits: wp_verify reg:1 value:0x0
+ich_hwseq_read_status: only supports STATUS1
+wp_read_register: read from register 2 not is supported by programmer, writeprotect operations will assume it contains 0x00.
+write_wp_bits: wp_verify reg:2 value:0x0
+ich_hwseq_read_status: only supports STATUS1
+wp_read_register: read from register 3 not is supported by programmer, writeprotect operations will assume it contains 0x00.
+write_wp_bits: wp_verify reg:3 value:0x0
+Reading old flash chip contents... read_flash: Flash Descriptor region (00000000..0x003fff) is readable, reading range (00000000..0x003fff).
+Reading 16384 bytes starting at 0x000000.
+HSFC: FGO=1, FCYCLE=0, FDBC=63, SME=0
+HSFC: FGO=1, FCYCLE=0, FDBC=63, SME=0
+HSFC: FGO=1, FCYCLE=0, FDBC=63, SME=0
+HSFC: FGO=1, FCYCLE=0, FDBC=63, SME=0
+HSFC: FGO=1, FCYCLE=0, FDBC=63, SME=0
+.
+.
+.
+.
+.
+(I didn't write the repetition codes)
+.
+.
+.
+.
+done.
+Apparently at least some data has changed.
+Your flash chip is in an unknown state.
+Get help on IRC (see https://www.flashrom.org/Contact) or mail
+flashrom@flashrom.org with the subject "FAILED: <your board name>"!-------------------------------------------------------------------------------
+DO NOT REBOOT OR POWEROFF!
+Reading Status register
+HSFC: FGO=1, FCYCLE=0, FDBC=0, SME=0
+ich_hwseq_read_status: only supports STATUS1
+wp_read_register: read from register 2 not is supported by programmer, writeprotect operations will assume it contains 0x00.
+Reading Status register
+HSFC: FGO=1, FCYCLE=0, FDBC=0, SME=0
+ich_hwseq_read_status: only supports STATUS1
+wp_read_register: read from register 2 not is supported by programmer, writeprotect operations will assume it contains 0x00.
+Reading Status register
+HSFC: FGO=1, FCYCLE=0, FDBC=0, SME=0
+Reading Status register
+HSFC: FGO=1, FCYCLE=0, FDBC=0, SME=0
+Reading Status register
+HSFC: FGO=1, FCYCLE=0, FDBC=0, SME=0
+Reading Status register
+HSFC: FGO=1, FCYCLE=0, FDBC=0, SME=0
+Reading Status registerS
+HSFC: FGO=1, FCYCLE=0, FDBC=0, SME=0
+ich_hwseq_read_status: only supports STATUS1
+wp_read_register: read from register 2 not is supported by programmer, writeprotect operations will assume it contains 0x00.
+ich_hwseq_read_status: only supports STATUS1
+wp_read_register: read from register 3 not is supported by programmer, writeprotect operations will assume it contains 0x00.
+Reading Status register
+HSFC: FGO=1, FCYCLE=0, FDBC=0, SME=0
+write_wp_bits: wp_verify reg:1 value:0x0
+ich_hwseq_read_status: only supports STATUS1
+wp_read_register: read from register 2 not is supported by programmer, writeprotect operations will assume it contains 0x00.
+write_wp_bits: wp_verify reg:2 value:0x0
+ich_hwseq_read_status: only supports STATUS1
+wp_read_register: read from register 3 not is supported by programmer, writeprotect operations will assume it contains 0x00.
+write_wp_bits: wp_verify reg:3 value:0x0
+Reading Status register
+HSFC: FGO=1, FCYCLE=0, FDBC=0, SME=0
+ich_hwseq_read_status: only supports STATUS1
+wp_read_register: read from register 2 not is supported by programmer, writeprotect operations will assume it contains 0x00.
+ich_hwseq_read_status: only supports STATUS1
+wp_read_register: read from register 3 not is supported by programmer, writeprotect operations will assume it contains 0x00.
+Reading Status register
+HSFC: FGO=1, FCYCLE=0, FDBC=0, SME=0
+write_wp_bits: wp_verify reg:1 value:0x0
+ich_hwseq_read_status: only supports STATUS1
+wp_read_register: read from register 2 not is supported by programmer, writeprotect operations will assume it contains 0x00.
+write_wp_bits: wp_verify reg:2 value:0x0
+ich_hwseq_read_status: only supports STATUS1
+wp_read_register: read from register 3 not is supported by programmer, writeprotect operations will assume it contains 0x00.
+write_wp_bits: wp_verify reg:3 value:0x0
+Restoring PCI config space for 00:1f:5 reg 0xdc
